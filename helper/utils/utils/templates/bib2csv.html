@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>BibTex to CSV</h2>
+<form enctype="multipart/form-data" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="AsgkLKNkMUcE+olcn/nvO80P2yZbb0RG5pCkfHPGV0YvM2/yLRyvO8vpmoV4+Ah5q+GEsOIz9VKba1BzA1xzpQ==" />
+  <fieldset class="box">
+    <legend>Select the file to import (BIB)</legend>
+    <p>
+      <input type="file" name="file" id="file" />
+    </p>
+  </fieldset>
+  <p><input type="submit" value="Next" data-disable-with="Next" /></p>
+  {% csrf_token %}
+</form>
+<div style="clear:both;"></div>
+{% endblock %}

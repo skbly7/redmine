@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tool">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Systematic Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="description" content="Redmine" />
+  <meta name="keywords" content="issue,bug,tracker" />
+  <link rel="stylesheet" media="all" href="/stylesheets/jquery/jquery-ui-1.11.0.css?1517776737" />
+  <link rel="stylesheet" media="all" href="/stylesheets/application.css?1517776737" />
+  <link rel="stylesheet" media="all" href="/stylesheets/responsive.css?1517776737" />
+
+  <script src="/javascripts/jquery-1.11.1-ui-1.11.0-ujs-4.3.1.js?1517776737"></script>
+  <script src="/javascripts/application.js?1517776737"></script>
+  <script src="/javascripts/responsive.js?1517776737"></script>
+  <script>
+    //<![CDATA[
+    $(window).load(function() {
+      warnLeavingUnsaved('The current page contains unsaved text that will be lost if you leave this page.');
+    });
+    //]]>
+  </script>
+  <style>
+    #sidebar {
+      float: left;
+      padding-left: 15px;
+    }
+    #content {
+      float: right;
+    }
+  </style>
+  <!-- page specific tags -->
+</head>
+
+<body class="controller-imports action-new avatars-off">
+
+  <div id="wrapper">
+
+    <div class="flyout-menu js-flyout-menu">
+
+
+      <div class="flyout-menu__search">
+        <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+
+          <label class="search-magnifier search-magnifier--flyout" for="flyout-search">&#9906;</label>
+          <input type="text" name="q" id="flyout-search" class="small js-search-input" placeholder="Search" />
+        </form>
+      </div>
+
+      <div class="flyout-menu__avatar flyout-menu__avatar--no-avatar">
+        <a class="user active" href="/users/1">admin</a>
+      </div>
+
+      <h3>Project</h3>
+      <span class="js-project-menu"></span>
+
+      <h3>General</h3>
+      <span class="js-general-menu"></span>
+
+      <span class="js-sidebar flyout-menu__sidebar"></span>
+
+      <h3>Profile</h3>
+      <span class="js-profile-menu"></span>
+
+    </div>
+
+    <div id="wrapper2">
+      <div id="wrapper3">
+        <div id="top-menu">
+          <div id="account">
+            <ul>
+              <li><a class="my-account" href="/my/account">My account</a></li>
+              <li><a class="logout" rel="nofollow" data-method="post" href="/logout">Sign out</a></li>
+            </ul>
+          </div>
+          <div id="loggedas">Logged in as <a class="user active" href="/users/1">admin</a></div>
+          <ul>
+            <li><a class="home" href="/">Home</a></li>
+            <li><a class="my-page" href="/my/page">My page</a></li>
+            <li><a class="projects" href="/projects">Projects</a></li>
+            <li><a class="administration" href="/admin">Administration</a></li>
+            <li><a class="help" href="https://www.redmine.org/guide">Help</a></li>
+          </ul>
+        </div>
+
+        <div id="header">
+
+          <a href="#" class="mobile-toggle-button js-flyout-menu-toggle-button"></a>
+
+          <div id="quick-search">
+            <form action="/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
+              <input type="hidden" name="scope" />
+
+              <label for='q'>
+          <a accesskey="4" href="/search">Search</a>:
+        </label>
+              <input type="text" name="q" id="q" size="20" class="small" accesskey="f" />
+            </form>
+            <div id="project-jump" class="drdn"><span class="drdn-trigger">Jump to a project...</span>
+              <div class="drdn-content">
+                <div class="quick-search"><input type="text" name="q" id="projects-quick-search" value="" class="autocomplete" data-automcomplete-url="/projects/autocomplete.js?jump=issues" autocomplete="off" /></div>
+                <div class="drdn-items projects selection"></div>
+                <div class="drdn-items all-projects selection"><a class="selected" href="/projects?jump=issues">All Projects</a></div>
+              </div>
+            </div>
+          </div>
+
+          <h1>Systematic Study</h1>
+
+          <div id="main-menu" class="tabs">
+            <ul>
+              <li><a class="projects" href="/projects">Projects</a></li>
+              <li><a class="activity" href="/activity">Activity</a></li>
+              <li><a class="issues" href="/issues">Papers</a></li>
+              <li><a class="time-entries" href="/time_entries">Spent time</a></li>
+              <li><a class="gantt" href="/issues/gantt">Gantt</a></li>
+              <li><a class="calendar" href="/issues/calendar">Calendar</a></li>
+              <li><a class="news" href="/news">News</a></li>
+              <li><a class="helper selected" href="/helper">Helper</a></li>
+            </ul>
+            <div class="tabs-buttons" style="display:none;">
+              <button class="tab-left" onclick="moveTabLeft(this); return false;"></button>
+              <button class="tab-right" onclick="moveTabRight(this); return false;"></button>
+            </div>
+          </div>
+        </div>
+        <style>
+          #flow .step {
+            border:1px solid grey;
+            margin-bottom: 5px;
+            height: 3em;
+            clear: both;
+          }
+          #flow .name {
+            width: 79%;
+            float: right;
+            text-align: center;
+            height: 3em;
+            overflow: hidden;
+            padding-top: 0.65em;
+          }
+          #flow .status {
+            float:left;
+            width:20%;
+            border-right: 1px solid;
+            height: 3em;
+          }
+          #flow .done {
+            background: green;
+          }
+          #flow .ongoing {
+            background: yellow;
+          }
+        </style>
+
+        <div id="main" class="">
+          <div id="sidebar">
+            <h3>Current Study</h3>
+            <div id="flow">
+              {% for stage_name in stages.done %}
+              <div class="step">
+                <div class="status done"></div>
+                <div class="name"><a href="{{stage_name|urlize|cut:" "}}">{{stage_name}}</a></div>
+              </div>
+              {% endfor %}
+              {% for stage_name in stages.ongoing %}
+              <div class="step">
+                <div class="status ongoing"></div>
+                <div class="name"><a href="{{stage_name|urlize|cut:" "}}">{{stage_name}}</a></div>
+              </div>
+                {% block ongoing_sidebar %}
+                {% endblock %}
+              {% endfor %}
+              {% for stage_name in stages.future %}
+              <div class="step">
+                <div class="status"></div>
+                <div class="name"><a href="{{stage_name|urlize|cut:" "}}">{{stage_name}}</a></div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div id="content">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+
+      <div id="ajax-indicator" style="display:none;"><span>Loading...</span></div>
+      <div id="ajax-modal" style="display:none;"></div>
+
+      <div id="footer">
+        <div class="bgl">
+          <div class="bgr">
+            Powered by <a href="https://www.redmine.org/">Redmine</a> &copy; 2006-2017 Jean-Philippe Lang
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

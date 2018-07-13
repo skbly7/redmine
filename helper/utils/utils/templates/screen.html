@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block ongoing_sidebar %}
+{% for stage_name in stages.child %}
+<div class="step child">
+  <div class="status ongoing"></div>
+  <div class="name"><a href="{{stage_name|urlize|cut:" "}}">{{stage_name}}</a></div>
+</div>
+<style>
+.step.child {
+    margin-left: 20%;
+    float: right;
+    clear: both;
+    width: 80%;
+}
+</style>
+{% endfor %}
+{% endblock %}
+
+{% block content %}
+<h2>Duplicate Finder</h2>
+<style>
+  .tabular label.floating {
+    width: 200px;
+  }
+</style>
+<div>
+  <div class="issue tracker-4 status-1 priority-2 priority-default created-by-me details">
+      <div class="next-prev-links contextual">
+        « Previous |
+          <span class="position">
+            <a href="/issues?f%5B%5D=status_id&amp;op%5Bstatus_id%5D=o&amp;page=1&amp;per_page=25&amp;set_filter=1&amp;sort=id%3Adesc&amp;v%5Bstatus_id%5D%5B%5D=">1 of 2</a>
+          </span> |
+        <a title="#1" accesskey="n" href="/issues/1">Next »</a>
+      </div>
+
+    <div class="gravatar-with-child">
+
+
+    </div>
+
+  <div class="subject">
+  <div><h3>Impact of Gamification on Code review process: An Experimental Study</h3></div>
+  </div>
+  <div class="attributes">
+  <div class="splitcontent"><div class="splitcontentleft">  <div class="category attribute"><div class="label">Source:</div><div class="value">Manual</div></div></div><div class="splitcontentleft"></div></div>
+  <div class="splitcontent"><div class="splitcontentleft"><div class="cf_2 attribute"><div class="label"><span>Year</span>:</div><div class="value">2017</div></div><div class="cf_3 attribute"><div class="label"><span title="Comma separated author names" class="field-description">Authors</span>:</div><div class="value">Shivam Khandelwal, Saikrishna Sripada, Y. Raghu Reddy</div></div><div class="cf_4 attribute"><div class="label"><span title="URL of the paper on either Digital Library" class="field-description">URL</span>:</div><div class="value"><a class="external" href="http://dl.acm.org/citation.cfm?id=3021474">http://dl.acm.org/citation.cfm?id=302...</a></div></div></div><div class="splitcontentleft"><div class="cf_5 attribute"><div class="label"><span>DOI</span>:</div><div class="value">10.1145/3021460.3021474</div></div><div class="cf_7 attribute"><div class="label"><span>Keywords</span>:</div><div class="value"></div></div></div></div>
+
+  </div>
+
+
+  <div class="cf_6 attribute"><hr><p><strong><span>Abstract</span></strong></p><div class="value"><p>Researchers have supported the idea of gamification to enhance students' interest in activities like code reviews, change management, knowledge management, issue tracking, etc. which might otherwise be repetitive and monotonous. We performed an experimental study consisting of nearly 180+ participants to measure the impact of gamification on code review process using 5 different code review tools, including one gamified code review instance from our extensible architectural framework. We assess the impact of gamification based on the code smells and bugs identified in a gamified and non-gamified environment as per code inspection report. Further, measurement and comparison of the quantity and usefulness of code review comments was done using machine learning techniques.</p></div></div>
+
+  </div>
+
+
+    <div class="issue tracker-4 status-1 priority-2 priority-default created-by-me details">
+        <div class="next-prev-links contextual">
+          « Previous |
+            <span class="position">
+              <a href="/issues?f%5B%5D=status_id&amp;op%5Bstatus_id%5D=o&amp;page=1&amp;per_page=25&amp;set_filter=1&amp;sort=id%3Adesc&amp;v%5Bstatus_id%5D%5B%5D=">1 of 2</a>
+            </span> |
+          <a title="#1" accesskey="n" href="/issues/1">Next »</a>
+        </div>
+
+      <div class="gravatar-with-child">
+
+
+      </div>
+
+    <div class="subject">
+    <div><h3>Impact of Gamification on Code review process: An Experimental Study</h3></div>
+    </div>
+    <div class="attributes">
+    <div class="splitcontent"><div class="splitcontentleft">  <div class="category attribute"><div class="label">Source:</div><div class="value">Manual</div></div></div><div class="splitcontentleft"></div></div>
+    <div class="splitcontent"><div class="splitcontentleft"><div class="cf_2 attribute"><div class="label"><span>Year</span>:</div><div class="value">2017</div></div><div class="cf_3 attribute"><div class="label"><span title="Comma separated author names" class="field-description">Authors</span>:</div><div class="value">Shivam Khandelwal, Saikrishna Sripada, Y. Raghu Reddy</div></div><div class="cf_4 attribute"><div class="label"><span title="URL of the paper on either Digital Library" class="field-description">URL</span>:</div><div class="value"><a class="external" href="http://dl.acm.org/citation.cfm?id=3021474">http://dl.acm.org/citation.cfm?id=302...</a></div></div></div><div class="splitcontentleft"><div class="cf_5 attribute"><div class="label"><span>DOI</span>:</div><div class="value">10.1145/3021460.3021474</div></div><div class="cf_7 attribute"><div class="label"><span>Keywords</span>:</div><div class="value"></div></div></div></div>
+
+    </div>
+
+
+    <div class="cf_6 attribute"><hr><p><strong><span>Abstract</span></strong></p><div class="value"><p>Researchers have supported the idea of gamification to enhance students' interest in activities like code reviews, change management, knowledge management, issue tracking, etc. which might otherwise be repetitive and monotonous. We performed an experimental study consisting of nearly 180+ participants to measure the impact of gamification on code review process using 5 different code review tools, including one gamified code review instance from our extensible architectural framework. We assess the impact of gamification based on the code smells and bugs identified in a gamified and non-gamified environment as per code inspection report. Further, measurement and comparison of the quantity and usefulness of code review comments was done using machine learning techniques.</p></div></div>
+
+    </div>
+
+
+</div>
+<form enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+  <p><input type="submit" value="Accept" style="background:green;color:white;" /><input type="submit" value="Decline"  style="background:red;color:white;" /></p>
+  {% csrf_token %}
+</form>
+<div style="clear:both;"></div>
+{% endblock %}

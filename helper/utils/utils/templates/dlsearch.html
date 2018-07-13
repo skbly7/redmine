@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block ongoing_sidebar %}
+{% endblock %}
+
+{% block content %}
+<h2>Conduct Search</h2>
+<style>
+  .tabular label.floating {
+    width: 200px;
+  }
+</style>
+{% if success %}
+<div class="flash notice" id="flash_notice">Successful added into queue.</div>
+{% endif %}
+<form enctype="multipart/form-data" accept-charset="UTF-8" method="post">
+  <fieldset class="box tabular">
+    <legend>Search Query</legend>
+    <p>
+      <label for="keyword">Keyword<span class="required"> *</span></label>
+      <input size="80" maxlength="255" type="text" value="" name="keyword" id="keyword" required>
+    </p>
+  </fieldset>
+  <fieldset class="box tabular"><legend>Digital Libraries</legend>
+    <label class="floating"><input type="checkbox" name="library[]" value="acm">ACM Digital Library</label>
+    <label class="floating"><input type="checkbox" name="library[]" value="ieee">IEEE Xplore</label>
+    <label class="floating"><input type="checkbox" name="library[]" value="springer">Springer Link</label>
+  </fieldset>
+  <p><input type="submit" value="Download" /></p>
+  {% csrf_token %}
+</form>
+<div style="clear:both;"></div>
+{% endblock %}
